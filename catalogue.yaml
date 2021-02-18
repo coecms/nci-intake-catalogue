@@ -1,0 +1,7 @@
+metadata:
+    version: 1
+sources:
+    era5:
+        driver: intake_esm.esm_datastore
+        args:
+            esmcol_obj: era5/catalogue.json

@@ -1,0 +1,53 @@
+{
+    "esmcat_version": "0.1.0",
+    "id": "era5",
+    "catalog_file": "catalogue.csv",
+    "attributes": [
+        {
+            "column_name": "sub_collection"
+        },
+        {
+            "column_name": "product_type"
+        },
+        {
+            "column_name": "parameter"
+        },
+        {
+            "column_name": "year"
+        },
+        {
+            "column_name": "month"
+        },
+        {
+            "column_name": "startdate"
+        },
+        {
+            "column_name": "file_variable"
+        }
+    ],
+    "assets": {
+        "column_name": "path",
+        "format": "netcdf"
+    },
+    "aggregation_control": {
+        "variable_column_name": "file_variable",
+        "groupby_attrs": [
+            "sub_collection",
+            "dataset",
+            "product_type"
+        ],
+        "aggregations": [
+            {
+                "type": "union",
+                "attribute_name": "file_variable"
+            },
+            {
+                "type": "join_existing",
+                "attribute_name": "startdate",
+                "options": {
+                    "dim": "time"
+                }
+            }
+        ]
+    }
+}
