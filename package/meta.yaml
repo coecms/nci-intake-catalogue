@@ -1,0 +1,11 @@
+package:
+    name: nci_intake_catalogue
+    version: 1
+
+source:
+    path: .
+
+build:
+    number: 1
+    noarch: python
+    script: python -m pip install --no-deps .

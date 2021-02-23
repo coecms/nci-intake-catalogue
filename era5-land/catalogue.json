@@ -33,7 +33,6 @@
         "variable_column_name": "file_variable",
         "groupby_attrs": [
             "sub_collection",
-            "dataset",
             "product_type"
         ],
         "aggregations": [

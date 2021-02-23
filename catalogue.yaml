@@ -2,6 +2,11 @@ metadata:
     version: 1
 sources:
     era5:
+        description: top-level
         driver: intake_esm.esm_datastore
         args:
-            esmcol_obj: era5/catalogue.json
+            esmcol_obj: '{{CATALOG_DIR}}/era5/catalogue.json'
+    era5_land:
+        driver: intake_esm.esm_datastore
+        args:
+            esmcol_obj: '{{CATALOG_DIR}}/era5-land/catalogue.json'
