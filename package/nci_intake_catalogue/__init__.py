@@ -16,4 +16,4 @@
 
 import intake
 
-cat = intake.open_catalogue('/g/data/hh5/public/apps/nci_intake_catalogue')
+cat = intake.open_catalog('/g/data/hh5/public/apps/nci-intake-catalogue/catalogue.yaml')

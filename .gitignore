@@ -1,2 +1,4 @@
 listing
 catalogue.csv
+*.swp
+__pycache__

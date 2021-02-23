@@ -9,3 +9,11 @@ build:
     number: 1
     noarch: python
     script: python -m pip install --no-deps .
+
+requirements:
+    host:
+        - python
+    run:
+        - python
+        - intake
+        - intake-esm
