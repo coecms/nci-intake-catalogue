@@ -1,8 +1,8 @@
 {
     "esmcat_version": "0.1.0",
-    "id": "era5-land",
-    "title": "ERA5-land",
-    "description": "Catalog desc",
+    "id": "era5",
+    "title": "ERA5",
+    "description": "",
     "catalog_file": "catalogue.csv",
     "attributes": [
         {
