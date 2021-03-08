@@ -2,11 +2,33 @@ metadata:
     version: 1
 sources:
     era5:
-        description: top-level
+        description: |
+            ECMWF ERA5 Reanalysis
+
+            Requires access to /g/data/rt52
+
+            Files managed by NCI, contact help@nci.org.au
+            
+            https://confluence.ecmwf.int/display/CKB/ERA5%3A+data+documentation
+            https://opus.nci.org.au/display/ERA5/ERA5+Community+Home
         driver: intake_esm.esm_datastore
         args:
             esmcol_obj: '{{CATALOG_DIR}}/era5/catalogue.json'
     era5_land:
+        description: |
+            ECMWF ERA5-Land Reanalysis
+
+            Requires access to /g/data/zz93
+
+            Files managed by NCI, contact help@nci.org.au
+
+            https://confluence.ecmwf.int/display/CKB/ERA5-Land%3A+data+documentation
+            https://opus.nci.org.au/display/ERA5/ERA5+Community+Home
         driver: intake_esm.esm_datastore
         args:
             esmcol_obj: '{{CATALOG_DIR}}/era5-land/catalogue.json'
+    ecmwf:
+        description: Small datasets from ECMWF
+        driver: intake.catalog.local.YAMLFileCatalog
+        args:
+            path: '{{CATALOG_DIR}}/ecmwf/catalogue.yaml'

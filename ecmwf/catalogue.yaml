@@ -1,0 +1,13 @@
+metadata:
+    version: 1
+sources:
+    grib_parameters:
+        description: |
+            ECMWF Grib Parameters
+
+            A table with the information from the parameter database
+
+            https://apps.ecmwf.int/codes/grib/param-db
+        driver: csv
+        args:
+            urlpath: '{{CATALOG_DIR}}/ecmwf_parameters.csv'
