@@ -3,7 +3,7 @@
     "id": "cmip6",
     "title": "CMIP6",
     "description": "",
-    "catalog_file": "catalogue.csv.gz",
+    "catalog_file": "catalogue_all.csv.xz",
     "attributes": [
         {
             "column_name": "activity_id"

@@ -16,8 +16,10 @@
 
 import pandas
 
-df = pandas.read_csv('catalogue.csv.gz')
+df = pandas.read_csv('catalogue_all.csv.xz')
 
-latest = df.groupby(['activity_id','institution_id','source_id','experiment_id','member_id','table_id', 'variable_id', 'grid_label', 'date_range']).last().reset_index()
+columns = [c for c in df.columns if c not in ['version', 'path']]
+
+latest = df.groupby(columns).last().reset_index()
 
 latest.to_csv('catalogue_latestonly.csv.xz', index=False)

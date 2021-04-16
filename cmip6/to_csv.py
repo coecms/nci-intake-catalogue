@@ -18,7 +18,7 @@ import csv
 import json
 import re
 import sys
-import gzip
+import lzma
 
 # /g/data/fs38/publications/CMIP6/C4MIP/CSIRO/ACCESS-ESM1-5/1pctCO2-bgc/r1i1p1f1/Emon/nLitter/gn/v20191118/nLitter_Emon_ACCESS-ESM1-5_1pctCO2-bgc_r1i1p1f1_gn_010101-025012.nc
 #   C4MIP           - activity_id
@@ -64,7 +64,7 @@ with open('catalogue.json') as f:
     fieldnames.append(meta['assets']['column_name'])
 
 
-with gzip.open('catalogue_all.csv.gz', mode='wt', newline='') as f_out:
+with lzma.open('catalogue_all.csv.xz', mode='wt', newline='') as f_out:
     csv_w = csv.DictWriter(f_out, fieldnames, dialect='unix')
     csv_w.writeheader()
 

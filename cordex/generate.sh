@@ -21,3 +21,5 @@ find /g/data/al33/replicas/CORDEX/ -not -type d -not -path \*/files/\* -name \*.
 cat listing.rep listing.pub | sort | ./to_csv.py
 
 ./select_latest.py
+
+rm listing.pub listing.rep

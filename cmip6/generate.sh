@@ -15,7 +15,11 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-find /g/data/fs38/publications/CMIP6 -not -type d -not -path \*/files/\* -name \*.nc > listing.fs38
-find /g/data/oi10/replicas/CMIP6 -not -type d -not -path \*/files/\* -name \*.nc > listing.oi10
+find /g/data/fs38/publications/CMIP6/ -not -type d -not -path \*/files/\* -name \*.nc > listing.pub
+find /g/data/oi10/replicas/CMIP6/ -not -type d -not -path \*/files/\* -name \*.nc > listing.rep
 
-cat listing.fs38 listing.oi10 | sort | ./to_csv.py
+cat listing.pub listing.rep | sort | ./to_csv.py
+
+./select_latest.py
+
+rm listing.pub listing.rep
