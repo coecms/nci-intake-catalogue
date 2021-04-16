@@ -1,0 +1,78 @@
+{
+    "esmcat_version": "0.1.0",
+    "id": "cmip6",
+    "title": "CMIP6",
+    "description": "",
+    "catalog_file": "catalogue_all.csv.xz",
+    "attributes": [
+        {
+            "column_name": "project"
+        },
+        {
+            "column_name": "product"
+        },
+        {
+            "column_name": "domain"
+        },
+        {
+            "column_name": "institute"
+        },
+        {
+            "column_name": "driving_model"
+        },
+        {
+            "column_name": "experiment"
+        },
+        {
+            "column_name": "ensemble"
+        },
+        {
+            "column_name": "rcm_model"
+        },
+        {
+            "column_name": "rcm_version"
+        },
+        {
+            "column_name": "time_frequency"
+        },
+        {
+            "column_name": "variable"
+        },
+        {
+            "column_name": "version"
+        },
+        {
+            "column_name": "date_range"
+        }
+    ],
+    "assets": {
+        "column_name": "path",
+        "format": "netcdf"
+    },
+    "aggregation_control": {
+        "variable_column_name": "variable",
+        "groupby_attrs": [
+            "project",
+            "product",
+            "domain",
+            "institute",
+            "driving_model",
+            "experiment",
+            "ensemble",
+            "rcm_model",
+            "rcm_version",
+            "time_frequency",
+            "variable",
+            "version",
+        ],
+        "aggregations": [
+            {
+                "type": "join_existing",
+                "attribute_name": "date_range",
+                "options": {
+                    "dim": "time"
+                }
+            }
+        ]
+    }
+}

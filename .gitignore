@@ -1,4 +1,4 @@
-listing
-catalogue.csv
+listing*
+catalogue*.csv*
 *.swp
 __pycache__
