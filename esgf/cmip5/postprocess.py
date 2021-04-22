@@ -72,6 +72,7 @@ with open('catalogue.json') as f:
     cat = json.load(f)
 cat['id'] = config_post['latest']['id']
 cat['description'] = config_post['latest']['description']
+cat['catalog_file'] = 'catalogue_latest.csv.xz'
 with open('catalogue_latest.json', 'wt') as f:
     json.dump(cat, f, indent=2)
 

@@ -11,23 +11,9 @@ sources:
         driver: intake_esm.esm_datastore
         args:
             esmcol_obj: '{{CATALOG_DIR}}/era5-land/catalogue.json'
-    cordex:
-        description: CORDEX (latest file versions only)
-        driver: intake_esm.esm_datastore
+    esgf:
+        description: |
+            Data sources from the ESGF published or replicated at NCI
+        driver: intake.catalog.local.YAMLFileCatalog
         args:
-            esmcol_obj: '{{CATALOG_DIR}}/cordex/catalogue.json'
-    cordex_allversions:
-        description: CORDEX (all file versions)
-        driver: intake_esm.esm_datastore
-        args:
-            esmcol_obj: '{{CATALOG_DIR}}/cordex/catalogue_all.json'
-    cmip6:
-        description: CMIP6 (latest file versions only)
-        driver: intake_esm.esm_datastore
-        args:
-            esmcol_obj: '{{CATALOG_DIR}}/cmip6/catalogue.json'
-    cmip6_allversions:
-        description: CMIP6 (all file versions)
-        driver: intake_esm.esm_datastore
-        args:
-            esmcol_obj: '{{CATALOG_DIR}}/cmip6/catalogue_all.json'
+            path: '{{CATALOG_DIR}}/esgf/catalogue.yaml'
