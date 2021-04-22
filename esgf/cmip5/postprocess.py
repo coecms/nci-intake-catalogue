@@ -25,6 +25,15 @@ with open("ingest.yaml") as f:
 
 df = pandas.read_csv("catalogue.csv.xz")
 
+def rename(x, col):
+    return config['rename'][col][x]
+
+if config_post['esgf_project'] == 'CMIP5':
+    df['model'] = df['model_id'].apply(rename, col='model')
+    df['institute'] = df['institute_id'].apply(rename, col='institute')
+
+df.to_csv("catalogue.csv.xz", index=False)
+
 # Validate facets
 project = config_post['esgf_project']
 exclude = config_post['esgf_exclude']

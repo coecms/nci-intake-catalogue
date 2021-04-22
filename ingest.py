@@ -113,7 +113,7 @@ with tempfile.TemporaryFile('w+') as f, tempfile.TemporaryFile('w+') as s, lzma.
         record = match.groupdict()
 
         for col, renames in config.get('rename', {}).items():
-            if record[col] in renames:
+            if record.get(col, None) in renames:
                 record[col] = renames[record[col]]
 
         csv_w.writerow(record)

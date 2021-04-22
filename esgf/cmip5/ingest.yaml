@@ -29,8 +29,8 @@ drs: |
     /g/data/(rr3/publications|al33/replicas) # /g/data/rr3/publications
     /(?P<project>[^/]+)         # /CMIP5
     /(?P<product>[^/]+)         # /output1
-    /(?P<institute>[^/]+)       # /CSIRO-BOM
-    /(?P<model>[^/]+)           # /ACCESS1-3
+    /(?P<institute_id>[^/]+)    # /CSIRO-BOM
+    /(?P<model_id>[^/]+)        # /ACCESS1-3
     /(?P<experiment>[^/]+)      # /historicalGHG
     /(?P<time_frequency>[^/]+)  # /mon
     /(?P<realm>[^/]+)           # /land
@@ -41,7 +41,7 @@ drs: |
     /(?P=variable)              # /mrlsl
     (_(?P=realm))?              #               For eg. ocean_fx
     _(?P=cmor_table)            # _Lmon
-    _(?i:(?P=model))            # _ACCESS1-3, might be different case to path
+    _(?i:(?P=model_id))            # _ACCESS1-3, might be different case to path
     _([^_]+)                    # _historicalGHG, might not match path
     _(?P=ensemble)              # _r2i1p1
     (_(?P<date_range>[^/]+))?   # _195001-200512
@@ -61,8 +61,8 @@ aggregation_control:
     groupby_attrs:
         - project
         - product
-        - institute
-        - model
+        - institute_id
+        - model_id
         - experiment
         - time_frequency
         - realm
@@ -109,6 +109,8 @@ postprocess:
         - date_range
         - ensemble
         - version
+        - model_id
+        - institute_id
     latest:
         id: cmip5
         title: CMIP5 (Latest Versions)
