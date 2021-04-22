@@ -1,0 +1,112 @@
+# Metadata, as per intake_esm catalogue.json
+id: cordex_all
+title: CORDEX (All Versions)
+description: |
+    Datasets on Gadi, both publised and replicated. All file versions present are in the listing, see catalogue 'cordex' for only the latest versions
+
+    Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+
+    Project: al33, rr3
+    Maintained By: NCI
+    Contact: help@nci.org.au
+    References:
+        - https://cordex.org/
+
+# Find paths and options to locate all of the files
+find:
+    paths:
+        - /g/data/al33/replicas/CORDEX/
+        - /g/data/rr3/publications/CORDEX/
+    options: -not -type d -not -path */files/* -name *.nc
+
+# Python regular expression to decompose the DRS
+#   Name a section with (?P<NAME>...)
+#   Refer to a previous name with (?P=NAME) (e.g. if the variable is in both the path and filename)
+#   Uses the re.VERBOSE flag, comments allowed
+drs: |
+    ^(?P<path>/g/data/(rr3/publications|al33/replicas)/
+    (?P<project>[^/]+)/
+    (?P<product>[^/]+)/
+    (?P<domain>[^/]+)/
+    (?P<institute>[^/]+)/
+    (?P<driving_model>[^/]+)/
+    (?P<experiment>[^/]+)/
+    (?P<ensemble>[^/]+)/
+    (?P<rcm_name>[^/]+)/
+    (?P<rcm_version>[^/]+)/
+    (?P<time_frequency>[^/]+)/
+    (?P<variable>[^/]+)/
+    (?P<version>[^/]+)/
+    (?P=variable)_
+    (?P=domain)_
+    (?P=driving_model)_
+    (?P=experiment)_
+    (?P=ensemble)_
+    ([^/]+)_ # not rcm_model from the path
+    ([^/]+)_ # Not rcm_version from the path
+    (?P=time_frequency)
+    (_(?P<date_range>.*))?\.nc)$
+
+# Aggregation, as per intake_esm catalogue.json
+# Attributes will be automatically generated based on the DRS pattern, 
+# excluding the asset column name
+assets:
+    column_name: path
+    format: netcdf
+aggregation_control:
+    # Name of the variable in the file
+    variable_column_name: variable
+    # Grouping keys are made of these columns, joined by '.'
+    groupby_attrs:
+        - project
+        - product
+        - domain
+        - institute
+        - driving_model
+        - experiment
+        - ensemble
+        - rcm_name
+        - rcm_version
+        - time_frequency
+        - variable
+        - version
+    aggregations:
+        # Join along the existing time dimension
+        - type: join_existing
+          attribute_name: date_range
+          options:
+              dim: time
+
+# Renames to make the path DRS match ESGF
+rename:
+    project:
+        CORDEX: cordex
+    rcm_name:
+        BOM-SDMa-NRM: BOM-SDM
+        CSIRO-CCAM: CCAM
+        CSIRO-CCAM-1704: CCAM-1704
+        UNSW-WRF360J: WRF360J
+        UNSW-WRF360K: WRF360K
+        UNSW-WRF360L: WRF360L
+
+postprocess:
+    esgf_project: CORDEX
+    esgf_exclude:
+        - project
+        - path
+        - date_range
+        - ensemble
+        - version
+    latest:
+        id: cordex
+        title: CORDEX (Latest Versions)
+        description: |
+            Datasets on Gadi, both publised and replicated. Only the latest available file versions are in the listing, see catalogue 'cordex_all' for only the latest versions
+
+            Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+
+            Project: al33, rr3
+            Maintained By: NCI
+            Contact: help@nci.org.au
+            References:
+                - https://cordex.org/

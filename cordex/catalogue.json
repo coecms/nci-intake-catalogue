@@ -27,7 +27,7 @@
             "column_name": "ensemble"
         },
         {
-            "column_name": "rcm_model"
+            "column_name": "rcm_name"
         },
         {
             "column_name": "rcm_version"
@@ -59,11 +59,11 @@
             "driving_model",
             "experiment",
             "ensemble",
-            "rcm_model",
+            "rcm_name",
             "rcm_version",
             "time_frequency",
             "variable",
-            "version",
+            "version"
         ],
         "aggregations": [
             {

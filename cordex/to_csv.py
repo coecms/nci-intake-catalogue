@@ -33,7 +33,7 @@ pattern = re.compile(
     r'(?P<driving_model>[^/]+)/'+
     r'(?P<experiment>[^/]+)/'+
     r'(?P<ensemble>[^/]+)/'+
-    r'(?P<rcm_model>[^/]+)/'+
+    r'(?P<rcm_name>[^/]+)/'+
     r'(?P<rcm_version>[^/]+)/'+
     r'(?P<time_frequency>[^/]+)/'+
     r'(?P<variable>[^/]+)/'+
@@ -47,7 +47,23 @@ pattern = re.compile(
     r'([^/]+)_'+ # Not rcm_version from the path
     r'(?P=time_frequency)'+
     r'(_(?P<date_range>.*))?\.nc)$')
-#    r'.*)$')
+
+
+def cleanup_record(record):
+    record['project'] = 'cordex'
+
+    rcm_name = {
+        'BOM-SDMa-NRM': 'BOM-SDM',
+        'CSIRO-CCAM': 'CCAM',
+        'CSIRO-CCAM-1704': 'CCAM-1704',
+        'UNSW-WRF360J': 'WRF360J',
+        'UNSW-WRF360K': 'WRF360K',
+        'UNSW-WRF360L': 'WRF360L',
+    }
+    if record['rcm_name'] in rcm_name:
+        record['rcm_name'] = rcm_name[record['rcm_name']]
+
+    return record
 
 
 with open('catalogue.json') as f:
@@ -69,7 +85,7 @@ with lzma.open('catalogue_all.csv.xz', mode='wt', newline='') as f_out:
 
         record = match.groupdict()
 
-        # print(record)
+        record = cleanup_record(record)
 
         csv_w.writerow(record)
 

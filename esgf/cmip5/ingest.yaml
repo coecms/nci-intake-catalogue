@@ -1,0 +1,126 @@
+# Metadata, as per intake_esm catalogue.json
+id: cmip5_all
+title: CMIP5 (All Versions)
+description: |
+    Datasets on Gadi, both publised and replicated. All file versions present are in the listing, see catalogue 'cmip5' for only the latest versions
+
+    Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+
+    Project: al33, rr3
+    Maintained By: NCI
+    Contact: help@nci.org.au
+    References:
+        - https://pcmdi.llnl.gov/mips/cmip5/
+
+# Find paths and options to locate all of the files
+find:
+    paths:
+        - /g/data/al33/replicas/CMIP5/output1
+        - /g/data/al33/replicas/CMIP5/output2
+        - /g/data/rr3/publications/CMIP5
+    options: -not -type d -not -path */files/* -name *.nc
+
+# Python regular expression to decompose the DRS
+#   Name a section with (?P<NAME>...)
+#   Refer to a previous name with (?P=NAME) (e.g. if the variable is in both the path and filename)
+#   Uses the re.VERBOSE flag, comments allowed
+drs: |
+    (?P<path>
+    /g/data/(rr3/publications|al33/replicas) # /g/data/rr3/publications
+    /(?P<project>[^/]+)         # /CMIP5
+    /(?P<product>[^/]+)         # /output1
+    /(?P<institute>[^/]+)       # /CSIRO-BOM
+    /(?P<model>[^/]+)           # /ACCESS1-3
+    /(?P<experiment>[^/]+)      # /historicalGHG
+    /(?P<time_frequency>[^/]+)  # /mon
+    /(?P<realm>[^/]+)           # /land
+    /(?P<cmor_table>[^/]+)      # /Lmon
+    /(?P<ensemble>[^/]+)        # /r2i1p1
+    /(?P<version>[^/]+)         # /v20130812
+    /(?P<variable>[^/]+)        # /mrlsl
+    /(?P=variable)              # /mrlsl
+    (_(?P=realm))?              #               For eg. ocean_fx
+    _(?P=cmor_table)            # _Lmon
+    _(?i:(?P=model))            # _ACCESS1-3, might be different case to path
+    _([^_]+)                    # _historicalGHG, might not match path
+    _(?P=ensemble)              # _r2i1p1
+    (_(?P<date_range>[^/]+))?   # _195001-200512
+    .nc
+    )
+
+# Aggregation, as per intake_esm catalogue.json
+# Attributes will be automatically generated based on the DRS pattern, 
+# excluding the asset column name
+assets:
+    column_name: path
+    format: netcdf
+aggregation_control:
+    # Name of the variable in the file
+    variable_column_name: variable
+    # Grouping keys are made of these columns, joined by '.'
+    groupby_attrs:
+        - project
+        - product
+        - institute
+        - model
+        - experiment
+        - time_frequency
+        - realm
+        - cmor_table
+        - ensemble
+        - version
+        - variable
+    aggregations:
+        # Join along the existing time dimension
+        - type: join_existing
+          attribute_name: date_range
+          options:
+              dim: time
+
+# Renames to make the path DRS match ESGF
+rename:
+    project:
+        CMIP5: cmip5
+    institute:
+        CCCma: CCCMA
+        NOAA-NCEP: NCEP
+    model:
+        ACCESS1-0: ACCESS1.0
+        ACCESS1-3: ACCESS1.3
+        CESM1-BGC: CESM1(BGC)
+        CESM1-CAM5: CESM1(CAM5)
+        CESM1-CAM5-1-FV2: CESM1(CAM5.1,FV2)
+        CESM1-FASTCHEM: CESM1(FASTCHEM)
+        CESM1-WACCM: CESM1(WACCM)
+        CSIRO-Mk3-6-0: CSIRO-Mk3L-1-2
+        GFDL-CM2p1: GFDL-CM2.1
+        MRI-AGCM3-2H: MRI-AGCM3.2H
+        MRI-AGCM3-2S: MRI-AGCM3.2S
+        bcc-csm1-1: BCC-CSM1.1
+        bcc-csm1-1-m: BCC-CSM1.1(m)
+        fio-esm: FIO-ESM
+        inmcm4: INM-CM4
+
+postprocess:
+    esgf_project: CMIP5
+    esgf_exclude:
+        - project
+        - path
+        - date_range
+        - ensemble
+        - version
+    latest:
+        id: cmip5
+        title: CMIP5 (Latest Versions)
+        description: |
+            Datasets on Gadi, both publised and replicated. Only the latest available file versions are in the listing, see catalogue 'cmip5_all' for all available versions
+
+            Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+
+            Project: al33, rr3
+            Maintained By: NCI
+            Contact: help@nci.org.au
+            References:
+                - https://pcmdi.llnl.gov/mips/cmip5/
+
+
