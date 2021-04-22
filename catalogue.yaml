@@ -32,3 +32,9 @@ sources:
         driver: intake.catalog.local.YAMLFileCatalog
         args:
             path: '{{CATALOG_DIR}}/ecmwf/catalogue.yaml'
+    esgf:
+        description: |
+            Data sources from the ESGF published or replicated at NCI
+        driver: intake.catalog.local.YAMLFileCatalog
+        args:
+            path: '{{CATALOG_DIR}}/esgf/catalogue.yaml'

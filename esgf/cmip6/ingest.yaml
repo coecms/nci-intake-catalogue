@@ -1,0 +1,99 @@
+# Metadata, as per intake_esm catalogue.json
+id: cmip6_all
+title: CMIP6 (All Versions)
+description: |
+    Datasets on Gadi, both publised and replicated. All file versions present are in the listing, see catalogue 'cmip6' for only the latest versions
+
+    Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+
+    Project: oi10, fs38
+    Maintained By: NCI
+    Contact: help@nci.org.au
+    References:
+        - https://pcmdi.llnl.gov/CMIP6/
+
+# Find paths and options to locate all of the files
+find:
+    paths:
+        - /g/data/oi10/replicas/CMIP6/
+        - /g/data/fs38/publications/CMIP6/
+    options: -not -type d -not -path */files/* -name *.nc
+
+# Python regular expression to decompose the DRS
+#   Name a section with (?P<NAME>...)
+#   Refer to a previous name with (?P=NAME) (e.g. if the variable is in both the path and filename)
+#   Uses the re.VERBOSE flag, comments allowed
+drs: |
+    ^(?P<path>/g/data/(fs38/publications|oi10/replicas)/
+    (?P<project>[^/]+)/
+    (?P<activity_id>[^/]+)/
+    (?P<institution_id>[^/]+)/
+    (?P<source_id>[^/]+)/
+    (?P<experiment_id>[^/]+)/
+    (?P<member_id>[^/]+)/
+    (?P<table_id>[^/]+)/
+    (?P<variable_id>[^/]+)/
+    (?P<grid_label>[^/]+)/
+    (?P<version>[^/]+)/
+    (?P=variable_id)_
+    (?P=table_id)_
+    (?P=source_id)_
+    (?P=experiment_id)_
+    (?P=member_id)_
+    (?P=grid_label)
+    (_(?P<date_range>.*))?\.nc)$
+
+# Aggregation, as per intake_esm catalogue.json
+# Attributes will be automatically generated based on the DRS pattern, 
+# excluding the asset column name
+assets:
+    column_name: path
+    format: netcdf
+aggregation_control:
+    # Name of the variable in the file
+    variable_column_name: variable
+    # Grouping keys are made of these columns, joined by '.'
+    groupby_attrs:
+        - project
+        - activity_id
+        - institution_id
+        - source_id
+        - experiment_id
+        - member_id
+        - table_id
+        - variable_id
+        - grid_label
+        - version
+    aggregations:
+        # Join along the existing time dimension
+        - type: join_existing
+          attribute_name: date_range
+          options:
+              dim: time
+
+# Renames to make the path DRS match ESGF
+rename: {}
+
+postprocess:
+    esgf_project: CMIP6
+    esgf_exclude:
+        - project
+        - path
+        - date_range
+        - ensemble
+        - version
+    latest:
+        id: cmip6
+        title: CMIP6 (Latest Versions)
+        description: |
+            Datasets on Gadi, both publised and replicated. Only the latest available file versions are in the listing, see catalogue 'cmip6_all' for all available versions
+
+            Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+
+            Project: oi10, fs38
+            Maintained By: NCI
+            Contact: help@nci.org.au
+            References:
+                - https://pcmdi.llnl.gov/CMIP6/
+
+

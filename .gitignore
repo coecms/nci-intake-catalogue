@@ -1,4 +1,7 @@
-listing
-catalogue.csv
+listing*
+catalogue*.csv*
 *.swp
 __pycache__
+esgf/catalogue.yaml
+esgf/*/catalogue*.json
+esgf/*/errors
