@@ -31,6 +31,8 @@ def rename(x, col):
 if config_post['esgf_project'] == 'CMIP5':
     df['model'] = df['model_id'].apply(rename, col='model')
     df['institute'] = df['institute_id'].apply(rename, col='institute')
+if config_post['esgf_project'] == 'CORDEX':
+    df['rcm_name'] = df['rcm_name_id'].apply(rename, col='rcm_name')
 
 df.to_csv("catalogue.csv.xz", index=False)
 

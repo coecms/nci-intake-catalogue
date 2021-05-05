@@ -65,7 +65,7 @@ aggregation_control:
         - driving_model
         - experiment
         - ensemble
-        - rcm_name_id
+        - rcm_name
         - rcm_version
         - time_frequency
         - variable
@@ -90,6 +90,7 @@ postprocess:
         - date_range
         - ensemble
         - version
+        - rcm_name_id
     rename:
         rcm_name:
             BOM-SDMa-NRM: BOM-SDM
