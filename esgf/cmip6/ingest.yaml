@@ -4,7 +4,7 @@ title: CMIP6 (All Versions)
 description: |
     Datasets on Gadi, both publised and replicated. All file versions present are in the listing, see catalogue 'cmip6' for only the latest versions
 
-    Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+    Catalogue columns match those used by ESGF search (esgf.nci.org.au). intake-esm dict keys are in the form '{esgf instance_id}'.
 
     Project: oi10, fs38
     Maintained By: NCI
@@ -51,7 +51,7 @@ assets:
     format: netcdf
 aggregation_control:
     # Name of the variable in the file
-    variable_column_name: variable
+    variable_column_name: variable_id
     # Grouping keys are made of these columns, joined by '.'
     groupby_attrs:
         - project
@@ -71,9 +71,6 @@ aggregation_control:
           options:
               dim: time
 
-# Renames to make the path DRS match ESGF
-rename: {}
-
 postprocess:
     esgf_project: CMIP6
     esgf_exclude:
@@ -88,7 +85,7 @@ postprocess:
         description: |
             Datasets on Gadi, both publised and replicated. Only the latest available file versions are in the listing, see catalogue 'cmip6_all' for all available versions
 
-            Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+            Catalogue columns match those used by ESGF search (esgf.nci.org.au). intake-esm dict keys are in the form '{esgf instance_id}'.
 
             Project: oi10, fs38
             Maintained By: NCI

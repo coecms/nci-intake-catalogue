@@ -26,7 +26,7 @@ with open("ingest.yaml") as f:
 df = pandas.read_csv("catalogue.csv.xz")
 
 def rename(x, col):
-    return config['rename'][col][x]
+    return config_post['rename'][col].get(x, x)
 
 if config_post['esgf_project'] == 'CMIP5':
     df['model'] = df['model_id'].apply(rename, col='model')

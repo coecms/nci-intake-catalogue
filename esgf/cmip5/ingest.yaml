@@ -4,7 +4,7 @@ title: CMIP5 (All Versions)
 description: |
     Datasets on Gadi, both publised and replicated. All file versions present are in the listing, see catalogue 'cmip5' for only the latest versions
 
-    Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+    Catalogue columns match those used by ESGF search (esgf.nci.org.au). intake-esm dict keys are in the form '{esgf instance_id}.{variable}'. Columns 'model_id' and 'institution_id' mirror the non-'_id' columns, with minor formatting differences needed to create the 'instance_id'.
 
     Project: al33, rr3
     Maintained By: NCI
@@ -77,29 +77,9 @@ aggregation_control:
           options:
               dim: time
 
-# Renames to make the path DRS match ESGF
 rename:
     project:
         CMIP5: cmip5
-    institute:
-        CCCma: CCCMA
-        NOAA-NCEP: NCEP
-    model:
-        ACCESS1-0: ACCESS1.0
-        ACCESS1-3: ACCESS1.3
-        CESM1-BGC: CESM1(BGC)
-        CESM1-CAM5: CESM1(CAM5)
-        CESM1-CAM5-1-FV2: CESM1(CAM5.1,FV2)
-        CESM1-FASTCHEM: CESM1(FASTCHEM)
-        CESM1-WACCM: CESM1(WACCM)
-        CSIRO-Mk3-6-0: CSIRO-Mk3L-1-2
-        GFDL-CM2p1: GFDL-CM2.1
-        MRI-AGCM3-2H: MRI-AGCM3.2H
-        MRI-AGCM3-2S: MRI-AGCM3.2S
-        bcc-csm1-1: BCC-CSM1.1
-        bcc-csm1-1-m: BCC-CSM1.1(m)
-        fio-esm: FIO-ESM
-        inmcm4: INM-CM4
 
 postprocess:
     esgf_project: CMIP5
@@ -111,13 +91,38 @@ postprocess:
         - version
         - model_id
         - institute_id
+
+    # Renames to make the path DRS match ESGF
+    rename:
+        project:
+            CMIP5: cmip5
+        institute:
+            CCCma: CCCMA
+            NOAA-NCEP: NCEP
+        model:
+            ACCESS1-0: ACCESS1.0
+            ACCESS1-3: ACCESS1.3
+            CESM1-BGC: CESM1(BGC)
+            CESM1-CAM5: CESM1(CAM5)
+            CESM1-CAM5-1-FV2: CESM1(CAM5.1,FV2)
+            CESM1-FASTCHEM: CESM1(FASTCHEM)
+            CESM1-WACCM: CESM1(WACCM)
+            CSIRO-Mk3-6-0: CSIRO-Mk3L-1-2
+            GFDL-CM2p1: GFDL-CM2.1
+            MRI-AGCM3-2H: MRI-AGCM3.2H
+            MRI-AGCM3-2S: MRI-AGCM3.2S
+            bcc-csm1-1: BCC-CSM1.1
+            bcc-csm1-1-m: BCC-CSM1.1(m)
+            fio-esm: FIO-ESM
+            inmcm4: INM-CM4
+
     latest:
         id: cmip5
         title: CMIP5 (Latest Versions)
         description: |
             Datasets on Gadi, both publised and replicated. Only the latest available file versions are in the listing, see catalogue 'cmip5_all' for all available versions
 
-            Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+            Catalogue columns match those used by ESGF search (esgf.nci.org.au). intake-esm dict keys are in the form '{esgf instance_id}.{variable}'. Columns 'model_id' and 'institution_id' mirror the non-'_id' columns, with minor formatting differences needed to create the 'instance_id'.
 
             Project: al33, rr3
             Maintained By: NCI

@@ -38,3 +38,31 @@ sources:
         driver: intake.catalog.local.YAMLFileCatalog
         args:
             path: '{{CATALOG_DIR}}/esgf/catalogue.yaml'
+    cosima:
+        description: |
+            Collection of model output data for the Consortium for Ocean-Sea Ice Modelling in Australia (COSIMA).
+
+            COSIMA is comprised of a number of university nodes (ANU, UNSW, UTas, UAdelaide) and the major publicly-funded research agencies (Bureau of Meteorology, Australian Antarctic Division and the CSIRO). We are strongly supported by the National Computational Infrastructure and the Australian Research Council. COSIMA's goal is to develop ocean and sea ice model configurations.COSIMA's supported model configurations are detailed below.
+
+            ACCESS-OM2
+
+            ACCESS is the Australian community climate model. The ocean model components of ACCESS include MOM5.1, with the CICE5 sea ice model and OASIS-MCT coupling. ACCESS-OM2 is designed to be consistent with the full coupled version of ACCESS (released as ACCESS-CM2). COSIMA supports ACCESS-OM2 at three resolutions: the standard 1° resolution, and the higher 0.25° and 0.1° resolutions. Each resolution is defined at the Equator, with a tripolar grid in the north and Mercator projection down to 65°S. The entire ACCESS-OM2 suite is available from our COSIMA GitHub repository. Full details on the model development and evaluation can be found in Kiss et al. (2020). Details of each model configuration are listed below.
+
+            ACCESS-OM2
+            ACCESS-OM2 is the moniker used to describe the suite of ACCESS Ocean Models, as well as to specifically refer to the default 1° model version. The model lateral resolution is nominally 1° over much of the globe, with a tripolar grid in the north and Mercator projection down to 65°S. It has 50 vertical levels. The model is configured to run with JRA55-do forcing datasets.
+
+            ACCESS-OM2-025
+            ACCESS-OM2-025 is COSIMA’s 1/4° ocean-sea ice model. It uses 0.25° lateral resolution at the Equator, tripolar in the north and Mercator projection down to 65°S, with 50 vertical levels. The model is forced with the JRA55-do forcing dataset.
+
+            ACCESS-OM2-01
+            ACCESS-OM2-01 is COSIMA's flagship high-resolution ocean-sea ice model. It uses 0.1° lateral resolution at the Equator, tripolar in the north and Mercator projection down to 65°S, with 75 vertical levels. The model is forced with the JRA55-do forcing dataset.
+
+            Project: cj50
+            Maintained By: NCI
+            Contact: help@nci.org.au
+            References:
+                - http://dx.doi.org/10.4225/41/5a2dc8543105a
+        driver: intake_esm.esm_datastore
+        args:
+            esmcol_obj: '{{CATALOG_DIR}}/cosima/catalogue.json'
+

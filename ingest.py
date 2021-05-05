@@ -76,7 +76,7 @@ print(shlex.join(find_command))
 
 with tempfile.TemporaryFile('w+') as f, tempfile.TemporaryFile('w+') as s, lzma.open(
     "catalogue.csv.xz", mode="wt", newline=""
-) as out, lzma.open('errors', mode='wt') as e:
+) as out, lzma.open('errors.xz', mode='wt') as e:
 
     # Find files
     print("Finding Files...")
@@ -122,8 +122,8 @@ with tempfile.TemporaryFile('w+') as f, tempfile.TemporaryFile('w+') as s, lzma.
 # Drop extra config items
 config.pop('find')
 config.pop('drs')
-config.pop('rename')
-config.pop('postprocess')
+config.pop('rename', None)
+config.pop('postprocess', None)
 
 config['esmcat_version'] = '0.1.0'
 config['catalog_file'] = 'catalogue.csv.xz'

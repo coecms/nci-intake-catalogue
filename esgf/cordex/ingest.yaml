@@ -4,7 +4,7 @@ title: CORDEX (All Versions)
 description: |
     Datasets on Gadi, both publised and replicated. All file versions present are in the listing, see catalogue 'cordex' for only the latest versions
 
-    Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+    Catalogue columns match those used by ESGF search (esgf.nci.org.au). intake-esm dict keys are in the form '{esgf instance_id}'. Column 'rcm_model_id' mirrors the non-'_id' column, with minor formatting differences needed to create the 'instance_id'.
 
     Project: al33, rr3
     Maintained By: NCI
@@ -32,7 +32,7 @@ drs: |
     (?P<driving_model>[^/]+)/
     (?P<experiment>[^/]+)/
     (?P<ensemble>[^/]+)/
-    (?P<rcm_name>[^/]+)/
+    (?P<rcm_name_id>[^/]+)/
     (?P<rcm_version>[^/]+)/
     (?P<time_frequency>[^/]+)/
     (?P<variable>[^/]+)/
@@ -65,7 +65,7 @@ aggregation_control:
         - driving_model
         - experiment
         - ensemble
-        - rcm_name
+        - rcm_name_id
         - rcm_version
         - time_frequency
         - variable
@@ -81,13 +81,6 @@ aggregation_control:
 rename:
     project:
         CORDEX: cordex
-    rcm_name:
-        BOM-SDMa-NRM: BOM-SDM
-        CSIRO-CCAM: CCAM
-        CSIRO-CCAM-1704: CCAM-1704
-        UNSW-WRF360J: WRF360J
-        UNSW-WRF360K: WRF360K
-        UNSW-WRF360L: WRF360L
 
 postprocess:
     esgf_project: CORDEX
@@ -97,13 +90,21 @@ postprocess:
         - date_range
         - ensemble
         - version
+    rename:
+        rcm_name:
+            BOM-SDMa-NRM: BOM-SDM
+            CSIRO-CCAM: CCAM
+            CSIRO-CCAM-1704: CCAM-1704
+            UNSW-WRF360J: WRF360J
+            UNSW-WRF360K: WRF360K
+            UNSW-WRF360L: WRF360L
     latest:
         id: cordex
         title: CORDEX (Latest Versions)
         description: |
-            Datasets on Gadi, both publised and replicated. Only the latest available file versions are in the listing, see catalogue 'cordex_all' for only the latest versions
+            Datasets on Gadi, both publised and replicated. Only the latest available file versions are in the listing, see catalogue 'cordex_all' for all available versions
 
-            Catalogue columns match those used by ESGF search (esgf.nci.org.au)
+            Catalogue columns match those used by ESGF search (esgf.nci.org.au). intake-esm dict keys are in the form '{esgf instance_id}'. Column 'rcm_model_id' mirrors the non-'_id' column, with minor formatting differences needed to create the 'instance_id'.
 
             Project: al33, rr3
             Maintained By: NCI
