@@ -18,10 +18,10 @@
 16:16:24:var24:Reserved for future unbalanced components[]::::24.128
 17:17:25:var25:Reserved for future unbalanced components[]::::25.128
 18:18:26:CL:Lake cover [0-1]:lakeFrac:::26.128
-19:19:27:CVL:Low vegetation cover [0-1]::::27.128
-20:20:28:CVH:High vegetation cover [0-1]::::28.128
-21:21:29:TVL:Type of low vegetation[]::::29.128
-22:22:30:TVH:Type of high vegetation[]::::30.128
+19:19:27:CVL:Low vegetation cover [0-1]:cvl:::27.128
+20:20:28:CVH:High vegetation cover [0-1]:cvh:::28.128
+21:21:29:TVL:Type of low vegetation[]:tvl:::29.128
+22:22:30:TVH:Type of high vegetation[]:tvh:::30.128
 23:23:31:CI:Sea-ice cover [0-1]:sic:sea_ice_area_fraction::31.128
 24:24:32:ASN:Snow albedo [0-1]:asn:surface_albedo_where_snow::32.128
 25:25:33:RSN:Snow density [kg m**-3]:rsn:snow_density::33.128
@@ -84,10 +84,10 @@
 82:82:157:R:Relative humidity [%]:hur:relative_humidity:area-mean:157.128
 83:83:158:TSP:Tendency of surface pressure [Pa s**-1]:tsp:tendency_of_surface_air_pressure::158.128
 84:84:159:BLH:Boundary layer height [m]:blh:::159.128
-85:85:160:SDOR:Standard deviation of orography []::::160.128
-86:86:161:ISOR:Anisotropy of sub-gridscale orography []::::161.128
-87:87:162:ANOR:Angle of sub-gridscale orography [rad]::::162.128
-88:88:163:SLOR:Slope of sub-gridscale orography []::::163.128
+85:85:160:SDOR:Standard deviation of orography []:sdor:::160.128
+86:86:161:ISOR:Anisotropy of sub-gridscale orography []:isor:::161.128
+87:87:162:ANOR:Angle of sub-gridscale orography [rad]:anor:::162.128
+88:88:163:SLOR:Slope of sub-gridscale orography []:slor:::163.128
 89:89:164:TCC:Total cloud cover [0-1]:clt:cloud_area_fraction::164.128
 90:90:165:10U:10 metre U wind component [m s**-1]:uas:eastward_wind::165.128
 91:91:166:10V:10 metre V wind component [m s**-1]:vas:northward_wind::166.128
@@ -283,3 +283,4 @@
 281:101:231:CVO3:Covariance of v component/ozone [m s-1]:cvo3:::231.162
 282:102:232:COO3:Covariance of omega/ozone [Pa s-1]:coo3:::232.162
 283:103:233:VO3:Variance of ozone [1]:vo3:::233.162
+284:104:74:SDFOR:Standard deviation of filtered subgrid orography [m]:sdfor:::74.128

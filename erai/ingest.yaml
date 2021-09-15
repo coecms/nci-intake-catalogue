@@ -51,7 +51,6 @@ aggregation_control:
     variable_column_name: variable
     # Grouping keys are made of these columns, joined by '.'
     groupby_attrs:
-        - mode
         - realm
         - frequency
         - variable

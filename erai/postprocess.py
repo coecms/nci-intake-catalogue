@@ -56,7 +56,7 @@ df.to_csv('catalogue.csv.xz', index=False)
 # Update catalogue.json
 with open('catalogue.json') as f:
     cat = json.load(f)
-cat['aggregation_control']['groupby_attrs'].extend(['parameter', 'standard_name', 'ecmwf_name','level','product'])
+cat['aggregation_control']['groupby_attrs'].extend(['parameter', 'ecmwf_name','level','product'])
 cat['attributes'].extend([
      {
       "column_name": "standard_name"
