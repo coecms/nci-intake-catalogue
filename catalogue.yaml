@@ -66,3 +66,19 @@ sources:
         args:
             esmcol_obj: '{{CATALOG_DIR}}/cosima/catalogue.json'
 
+    erai:
+        description: |
+                Replica of ERA Interim reanlysis from ECMWF on gadi. This collection is a subset of ERA Interim, including only subdaily (3hr/6hr) frequencies, for monthly data see the eraimon collection. The collection is complete as ERA Interim production stopped to Aug 2019.
+
+                The files were downloaded from ECMWF in grib format and converted to netcdf using where possible the cmor variable name conventions for variable names. The DRS is also a loose adaptation of the CMIP5 DRS.
+
+        Project: ub4
+        Maintained By: CLEX
+        Contact: cws_help@nci.org.au
+        Documentation: http://climate-cms.wikis.unsw.edu.au/ERA_INTERIM
+        License: https://creativecommons.org/licenses/by/4.0/
+        References:
+                -  https://apps.ecmwf.int/datasets/data/interim-full-daily/licence/
+        driver: intake_esm.esm_datastore
+        args:
+            esmcol_obj: '{{CATALOG_DIR}}/erai/catalogue.json'
