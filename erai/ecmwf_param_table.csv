@@ -1,0 +1,285 @@
+:index:code:ecmwf_name:long_name:cmor_name:standard_name:cell_methods:parameter
+0:0:1:STRF:Stream function [m**2 s**-1]::atmosphere_horizontal_streamfunction::1.128
+1:1:3:PT:Potential temperature [K]:pt:air_potential_temperature::3.128
+2:2:4:EQPT:Equivalent potential temperature [K]:eqpt:equivalent_potential_temperature::4.128
+3:3:5:SEPT:Saturated equivalent potential temperature [K]:sept:::5.128
+4:4:6:SSFR:Soil sand fraction [0-1]:ssfr:volume_fraction_of_sand_in_soil::6.128
+5:5:7:SCFR:Soil clay fraction [0-1]:ssfr:volume_fraction_of_clay_in_soil::7.128
+6:6:8:SRO:Surface runoff [m]:sro:::8.128
+7:7:9:SSRO:Sub-surface runoff [m]:sro:::9.128
+8:8:10:WS:Wind speed [m s**-1]:wind:wind_speed::10.128
+9:9:11:UDVW:U component of divergent wind [m s**-1]:udvw:::11.128
+10:10:12:VDVW:V component of divergent wind [m s**-1]:vdvw:::12.128
+11:11:13:URTW:U component of rotational wind [m s**-1]:urtw:::13.128
+12:12:14:VRTW:V component of rotational wind [m s**-1]:vrtw:::14.128
+13:13:21:UCTP:Unbalanced component of temperature [K]:uctp:::21.128
+14:14:22:UCLN:Unbalanced component of logarithm of surface pressure[]:ucln:::22.128
+15:15:23:UCDV:Unbalanced component of divergence [s**-1]:ucdv:::23.128
+16:16:24:var24:Reserved for future unbalanced components[]::::24.128
+17:17:25:var25:Reserved for future unbalanced components[]::::25.128
+18:18:26:CL:Lake cover [0-1]:lakeFrac:::26.128
+19:19:27:CVL:Low vegetation cover [0-1]::::27.128
+20:20:28:CVH:High vegetation cover [0-1]::::28.128
+21:21:29:TVL:Type of low vegetation[]::::29.128
+22:22:30:TVH:Type of high vegetation[]::::30.128
+23:23:31:CI:Sea-ice cover [0-1]:sic:sea_ice_area_fraction::31.128
+24:24:32:ASN:Snow albedo [0-1]:asn:surface_albedo_where_snow::32.128
+25:25:33:RSN:Snow density [kg m**-3]:rsn:snow_density::33.128
+26:26:34:SSTK:Sea surface temperature [K]:tos:sea_surface_temperature::34.128
+27:27:35:ISTL1:Ice surface temperature layer 1 [K]:istl1:soil_temperature:time-point:35.128
+28:28:36:ISTL2:Ice surface temperature layer 2 [K]:istl2::time-point:36.128
+29:29:37:ISTL3:Ice surface temperature layer 3 [K]:istl3::time-point:37.128
+30:30:38:ISTL4:Ice surface temperature layer 4 [K]:istl4::time-point:38.128
+31:31:39:SWVL1:Volumetric soil water layer 1 (0-7cm) [m**3 m**-3]:swvl1:volume_fraction_of_water_in_soil::39.128
+32:32:40:SWVL2:Volumetric soil water layer 2 (7-28cm) [m**3 m**-3]:swvl2:volume_fraction_of_water_in_soil::40.128
+33:33:41:SWVL3:Volumetric soil water layer 3 (28-100 cm) [m**3 m**-3]:swvl3:volume_fraction_of_water_in_soil::41.128
+34:34:42:SWVL4:Volumetric soil water layer 4 (100-289 cm)[m**3 m**-3]:swvl4:volume_fraction_of_water_in_soil::42.128
+35:35:43:SLT:Soil type []::::43.128
+36:36:44:ES:Snow evaporation [m]::::44.128
+37:37:45:SMLT:Snowmelt [m]::::45.128
+38:38:46:SDUR:Solar duration [s]::::46.128
+39:39:47:DSRP:Direct solar radiation [w m**-2]::::47.128
+40:40:48:MAGSS:Magnitude of surface stress [N m**-2 s]::::48.128
+41:41:49:10FG:Wind gust at 10 metres [m s**-1]:wg10:wind_speed_of_gust::49.128
+42:42:50:LSPF:Large-scale precipitation fraction [s]::::50.128
+43:43:51:MX2T24:Maximum 2 metre temperature [K]:tasmax:air_temperature:time-maximum (in the last 24 hrs):51.128
+44:44:52:MN2T24:Minimum 2 metre temperature [K]:tasmin:air_temperature:time-minimum (in the last 24 hrs):52.128
+45:45:53:MONT:Montgomery potential [m**2 s**-2]::::53.128
+46:46:54:PRES:Pressure [Pa]:pres:air_pressure::54.128
+47:47:55:MEAN2T24:Mean 2 metre temperature [K]:mean2t24:air_temperature:time-mean (in the last 24 hrs):55.128
+48:48:59:CAPE:Convective available potential energy [J Kg**-1]:cape:atmosphere_convective_available_potential_energy_wrt_surface::59.128
+49:49:60:PV:Potential vorticity [K m**2 kg**-1 s**-1]:pv:ertel_potential_vorticity::60.128
+50:50:78:TCLW:Total column liquid water [kg m**-2]:tclw:atmosphere_mass_content_of_cloud_liquid_water::78.128
+51:51:79:TCIW:Total column ice water [kg m**-2]:tciw:atmosphere_mass_content_of_cloud_ice::79.128
+52:52:127:AT:Atmospheric tide[]::::127.128
+53:53:128:BV:Budget values[]::::128.128
+54:54:129:Z:Geopotential [m**2 s**-2]:z:geopotential::129.128
+55:55:130:T:Temperature [K]:ta:air_temperature::130.128
+56:56:131:U:U velocity [m s**-1]:ua:eastward_wind::131.128
+57:57:132:V:V velocity [m s**-1]:va:northward_wind::132.128
+58:58:133:Q:Specific humidity [kg kg**-1]:hus:specific_humidity:area-mean:133.128
+59:59:134:SP:Surface pressure [Pa]:ps:surface_air_pressure::134.128
+60:60:135:W:Vertical velocity [Pa s**-1]:wap:lagrangian_tendency_of_air_pressure::135.128
+61:61:136:TCW:Total column water [kg m**-2]:tcw:atmosphere_mass_content_of_water::136.128
+62:62:137:TCWV:Total column water vapour [kg m**-2]:prw:atmosphere_water_vapor_content::137.128
+63:63:138:VO:Vorticity (relative) [s**-1]:vo:atmosphere_relative_vorticity::138.128
+64:64:139:STL1:Soil temperature level 1 (0-7cm) [K]:stl1:soil_temperature::139.128
+65:65:140:SWL1:Soil wetness level 1 (0-7cm) [m]:swl1:lwe_thickness_of_moisture_content_of_soil_layer::140.128
+66:66:141:SD:Snow depth [m]:sd:lwe_thickness_of_surface_snow_amount::141.128
+67:67:142:LSP:Stratiform precipitation [m]:lsp:lwe_thickness_of_large_scale_precipitation_amount::142.128
+68:68:143:CP:Convective precipitation [m]:cp:lwe_thickness_of_convective_precipitation_amount::143.128
+69:69:144:SF:Snowfall (convective + stratiform) [m]:sf:lwe_thickness_of_snowfall_amount::144.128
+70:70:145:BLD:Boundary layer dissipation [W m**-2 s]::dissipation_in_atmosphere_boundary_layer::145.128
+71:71:146:SSHF:Surface sensible heat flux [W m**-2 s]:hfss:surface_upward_sensible_heat_flux::146.128
+72:72:147:SLHF:Surface latent heat flux [W m**-2 s]:hfls:surface_upward_latent_heat_flux::147.128
+73:73:148:CHNK:Charnock[]::::148.128
+74:74:149:SNR:Surface net radiation [W m**-2 s]::::149.128
+75:75:150:TNR:Top net radiation[W m**-2 s ?]:tnr:::150.128
+76:76:151:MSL:Mean sea-level pressure [Pa]:psl:air_pressure_at_sea_level:time-mean:151.128
+77:77:152:LNSP:Logarithm of surface pressure[]::::152.128
+78:78:153:SWHR:Short-wave heating rate [K]::::153.128
+79:79:154:LWHR:Long-wave heating rate [K]::::154.128
+80:80:155:D:Divergence [s**-1]:d:divergence_of_wind::155.128
+81:81:156:GH:Height [m]:zg:geopotential_height::156.128
+82:82:157:R:Relative humidity [%]:hur:relative_humidity:area-mean:157.128
+83:83:158:TSP:Tendency of surface pressure [Pa s**-1]:tsp:tendency_of_surface_air_pressure::158.128
+84:84:159:BLH:Boundary layer height [m]:blh:::159.128
+85:85:160:SDOR:Standard deviation of orography []::::160.128
+86:86:161:ISOR:Anisotropy of sub-gridscale orography []::::161.128
+87:87:162:ANOR:Angle of sub-gridscale orography [rad]::::162.128
+88:88:163:SLOR:Slope of sub-gridscale orography []::::163.128
+89:89:164:TCC:Total cloud cover [0-1]:clt:cloud_area_fraction::164.128
+90:90:165:10U:10 metre U wind component [m s**-1]:uas:eastward_wind::165.128
+91:91:166:10V:10 metre V wind component [m s**-1]:vas:northward_wind::166.128
+92:92:167:2T:2 metre temperature [K]:tas:air_temperature::167.128
+93:93:168:2D:2 metre dewpoint temperature [K]:ta2d:dew_point_temperature::168.128
+94:94:169:SSRD:Surface solar radiation downwards [W m**-2 s]:rsds:surface_downwelling_shortwave_flux_in_air::169.128
+95:95:170:STL2:Soil temperature level 2 (7-28cm) [K]:stl2:soil_temperature::170.128
+96:96:171:SWL2:Soil wetness level 2 (7-28cm) [m]:swl2:lwe_thickness_of_moisture_content_of_soil_layer::171.128
+97:97:172:LSM:Land/sea mask [0,1]:lsm:land_binary_mask::172.128
+98:98:173:SR:Surface roughness [m]:sr:surface_roughness_length::173.128
+99:99:174:AL:Albedo [0-1]:al:surface_albedo::174.128
+100:100:175:STRD:Surface thermal radiation downwards [W m**-2 s]:strd:::175.128
+101:101:176:SSR:Surface solar radiation [W m**-2 s]:ssr:surface_net_upward_longwave_flux::176.128
+102:102:177:STR:Surface thermal radiation [W m**-2 s]:str:surface_net_upward_shortwave_flux::177.128
+103:103:178:TSR:Top solar radiation [W m**-2 s]:tsr:toa_net_upward_shortwave_flux::178.128
+104:104:179:TTR:Top thermal radiation [W m**-2 s]:rlut:toa_outgoing_longwave_flux::179.128
+105:105:180:EWSS:East/West surface stress [N m**-2 s]:tauu:surface_downward_eastward_stress::180.128
+106:106:181:NSSS:North/South surface stress [N m**-2 s]:tauv:surface_downward_northward_stress::181.128
+107:107:182:E:Evaporation [m]:e:lwe_thickness_of_water_evaporation_amount::182.128
+108:108:183:STL3:Soil temperature level 3 (28-100 cm) [K]:stl3:soil_temperature::183.128
+109:109:184:SWL3:Soil wetness level 3 (28-100 cm) [m]::lwe_thickness_of_moisture_content_of_soil_layer::184.128
+110:110:185:CCC:Convective cloud cover [0-1]:ccc:convective_cloud_area_fraction::185.128
+111:111:186:LCC:Low cloud cover [0-1]:lcc:cloud_area_fraction_in_atmosphere_layer:define layer model levels between the surface and 0.8 of the surface pressure using the model's overlap assumption(There must be a vertical coordinate variable indicating the extent of the layer(s). If the layers are model layers, the vertical coordinate can be model_level_number, but it is recommended to specify a physical coordinate (in a scalar or auxiliary coordinate variable)):186.128
+112:112:187:MCC:Medium cloud cover [0-1]:mcc:cloud_area_fraction_in_atmosphere_layer:define layer model levels between 0.8 and 0.45 of the surface pressure:187.128
+113:113:188:HCC:High cloud cover [0-1]:hcc:cloud_area_fraction_in_atmosphere_layer:define layer model levels between 0.45 of the surface pressure and the model top:188.128
+114:114:189:SUND:Sunshine duration [s]:sund:duration_of_sunshine::189.128
+115:115:190:EWOV:EW component of subgrid orographic variance [m**2]::::190.128
+116:116:191:NSOV:NS component of subgrid orographic variance [m**2]::::191.128
+117:117:192:NWOV:NWSE component of subgrid orographic variance [m**2]::::192.128
+118:118:193:NEOV:NESW component of subgrid orographic variance [m**2]::::193.128
+119:119:194:BTMP:Brightness temperature [K]:btmp:brightness_temperature::194.128
+120:120:195:LGWS:Lat. component of gravity wave stress [N m**-2 s]:lgws:::195.128
+121:121:196:MGWS:Meridional component of gravity wave stress [N m**-2 s]::::196.128
+122:122:197:GWD:Gravity wave dissipation [W m**-2 s]::::197.128
+123:123:198:SRC:Skin reservoir content [m]::::198.128
+124:124:199:VEG:Vegetation fraction [0-1]:vegFrac:vegetation_area_fraction::199.128
+125:125:200:VSO:Variance of sub-gridscale orography [m**2]::::200.128
+126:126:201:MX2T:Maximum 2 metre temperature since previous post-processing [K]:mx2t:air_temperature:time-maximum:201.128
+127:127:202:MN2T:Minimum 2 metre temperature since previous post-processing [K]:mn2t:air_temperature:time-minimum:202.128
+128:128:203:O3:Ozone mass mixing ratio [kg kg**-1]:tro3:mole_fraction_ozone_in_air::203.128
+129:129:204:PAW:Precipitation analysis weights []::::204.128
+130:130:205:RO:Runoff [m]:ro:::205.128
+131:131:206:TCO3:Total column ozone [kg m**-2 / Dobson before 20010612]::atmosphere_mass_content_of_ozone::206.128
+132:132:207:10SI:10 meter windspeed [m s**-1]:sfcWind:wind_speed::207.128
+133:133:208:TSRC:Top net solar radiation, clear sky [W m**-2]:tsrc:::208.128
+134:134:209:TTRC:Top net thermal radiation, clear sky [W m**-2]:ttrc:::209.128
+135:135:210:SSRC:Surface net solar radiation, clear sky [W m**-2]:ssrc:surface_net_downward_shortwave_flux_assuming_clear_sky::210.128
+136:136:211:STRC:Surface net thermal radiation, clear sky [W m**-2]:strc:surface_net_downward_longwave_flux_assuming_clear_sky::211.128
+137:137:212:TISR: TOA incident solar radiation [W m**-2]:rsdt:toa_incoming_shortwave_flux::212.128
+138:138:213:VIMD:Vertically integrated moisture divergence [kg m**-2]:vimd:::213.128
+139:139:214:DHR:Diabatic heating by radiation [K]:dhr:::214.128
+140:140:215:DHVD:Diabatic heating by vertical diffusion [K]:dhvd:::215.128
+141:141:216:DHCC:Diabatic heating by cumulus convection [K]:dhcc:::216.128
+142:142:217:DHLC:Diabatic heating large-scale condensation [K]:dhlc:::217.128
+143:143:218:VDZW:Vertical diffusion of zonal wind [m s**-1]:vdzw:::218.128
+144:144:219:VDMW:Vertical diffusion of meridional wind [m s**-1]:vdmw:::219.128
+145:145:220:EWGD:EW gravity wave drag tendency [m s**-1]:ewgd:::220.128
+146:146:221:NSGD:NS gravity wave drag tendency [m s**-1]:nsgd:::221.128
+147:147:222:CTZW:Convective tendency of zonal wind [m s**-1]:ctzw:::222.128
+148:148:223:CTMW:Convective tendency of meridional wind [m s**-1]:ctmw:::223.128
+149:149:224:VDH:Vertical diffusion of humidity [kg kg**-1]:vdh:::224.128
+150:150:225:HTCC:Humidity tendency by cumulus convection [kg kg**-1]:htcc:::225.128
+151:151:226:HTLC:Humidity tendency large-scale condensation [kg kg**-1]:htlc:::226.128
+152:152:227:CRNH:Change from removing negative humidity [kg kg**-1]:crnh:::227.128
+153:153:228:TP:Total precipitation [m]:tp:lwe_thickness_of_precipitation_amount::228.128
+154:154:229:IEWS:Instantaneous X surface stress [N m**-2]:iews:surface_downward_x_stress:time-point:229.128
+155:155:230:INSS:Instantaneous Y surface stress [N m**-2]:inss:surface_downward_y_stress:time-point:230.128
+156:156:231:ISHF:Instantaneous surface sensible heat flux [W m**-2]:ishf:surface_downward_sensible_heat_flux:time-point:231.128
+157:157:232:IE:Instantaneous moisture flux [kg m**-2 s]:evspsbl:water_evaporation_flux:time-point:232.128
+158:158:233:ASQ:Apparent surface humidity [kg kg**-1]:asq:::233.128
+159:159:234:LSRH:Logarithm of surface roughness length for heat []:lsrh:logarithm_of_surface_roughness_lenght_for_heat_in_air::234.128
+160:160:235:SKT:Skin temperature [K]:ts:surface_temperature::235.128
+161:161:236:STL4:Soil temperature level 4 (100-289 cm) [K]:stl4:soil_temperature::236.128
+162:162:237:SWL4:Soil wetness level 4 (100-289 cm) [m]:swl4:lwe_thickness_of_moisture_content_of_soil_layer::237.128
+163:163:238:TSN:Temperature of snow layer [K]:tsn:snow_temperature::238.128
+164:164:239:CSF:Convective snowfall [m]:csf:lwe_thickness_of_convective_snowfall_amount::239.128
+165:165:240:LSF:Large-scale snowfall [m]:lsf:lwe_thickness_of_large_scale_snowfall_amount::240.128
+166:166:241:ACF:Accumulated cloud fraction tendency [(-1 to 1)]:acf:::241.128
+167:167:242:ALW:Accumulated liquid water tendency [(-1 to 1)]:alw:::242.128
+168:168:243:FAL:Forecast albedo [0-1]:fal:surface_albedo::243.128
+169:169:244:FSR:Forecast surface roughness [m]:fsr:surface_roughness_length::244.128
+170:170:245:FLSR:Forecast log of surface roughness for heat[]:flsr:logarithm_of_surface_roughness_lenght_for_heat_in_air::245.128
+171:171:246:CLWC:Cloud liquid water content [kg kg**-1]:clw:mass_fraction_of_cloud_liquid_water_in_air::246.128
+172:172:247:CIWC:Cloud ice water content [kg kg**-1]:cli:mass_fraction_of_cloud_ice_in_air::247.128
+173:173:248:CC:Cloud cover [0-1]:clt:cloud_area_fraction::248.128
+174:174:249:AIW:Accumulated ice water tendency [(-1 to 1)]:aiw:::249.128
+175:175:250:ICE:Ice age [1,0]:ice:::250.128
+176:176:251:ATTE:Adiabatic tendency of temperature [K]:atte:::251.128
+177:177:252:ATHE:Adiabatic tendency of humidity [kg kg**-1]:athe:::252.128
+178:178:253:ATZE:Adiabatic tendency of zonal wind [m s**-1]:atze:::253.128
+179:179:254:ATMW:Adiabatic tendency of meridional wind [m s**-1]:atmw:::254.128
+180:0:51:SZ:Surface geopotential [m2 s-2]:sz:::51.162
+181:1:52:SP:Surface pressure [Pa]:sp:::52.162
+182:2:53:VIMA:Vertical integral of mass of atmosphere [kg m-2]:vima:::53.162
+183:3:54:VIT:Vertical integral of temperature [K kg m-2]:vit:::54.162
+184:4:55:VITCWV:Vertical integral of total column water vapour [kg m-2]:vitcwv:::55.162
+185:5:56:VITCLCW:Vertical integral of total column liquid cloud water [kg m-2]:vitclcw:::56.162
+186:6:57:VITCFCW:Vertical integral of total column frozen cloud water[kg m-2]:vitcfcw:::57.162
+187:7:58:VITCO3:Vertical integral of total column ozone [kg m-2]:vitco3:::58.162
+188:8:59:VIKE:Vertical integral of kinetic energy [J m-2]:vike:::59.162
+189:9:60:VITE:Vertical integral of thermal energy [J m-2]:vite:::60.162
+190:10:61:VIDSE:Vertical integral of dry static energy [J m-2]:vidse:::61.162
+191:11:62:VIMSE:Vertical integral of moist static energy [J m-2}:vimse:::62.162
+192:12:63:VITOTE:Vertical integral of total energy [J m-2]:vitote:::63.162
+193:13:64:VIEC:Vertical integral of energy conversion [W m-2]:viec:::64.162
+194:14:65:VIEMF:Vertical integral of eastward mass flux [kg m-1 s-1]:viemf:::65.162
+195:15:66:VINMF:Vertical integral of northward mass flux [kg m-1 s-1]:vinmf:::66.162
+196:16:67:VIEKEF:Vertical integral of eastward kinetic energy flux [W m-2]:viekef:::67.162
+197:17:68:VINKEF:Vertical integral of northward kinetic energy flux [W m-2]:vinkef:::68.162
+198:18:69:VIEHF:Vertical integral of eastward heat flux [W m-2]:viehf:::69.162
+199:19:70:VINHF:Vertical integral of northward heat flux [W m-2]:vinhf:::70.162
+200:20:71:VIEWVF:Vertical integral of eastward water vapour flux [kg m-1 s-1]:viewvf:::71.162
+201:21:72:VINWVF:Vertical integral of northward water vapour flux [kg m-1 s-1]:vinwvf:::72.162
+202:22:73:VIEGF:Vertical integral of eastward geopotential flux [W m-2]:viegf:::73.162
+203:23:74:VINGF:Vertical integral of northward geopotential flux [W m-2]:vingf:::74.162
+204:24:75:VIETEF:Vertical integral of eastward total energy flux [W m-2]:vietef:::75.162
+205:25:76:VINTEF:Vertical integral of northward total energy flux [W m-2]:vintef:::76.162
+206:26:77:VIEO3F:Vertical integral of eastward ozone flux [kg m-1 s-1]:vieo3f:::77.162
+207:27:78:VINO3F:Vertical integral of northward ozone flux [kg m-1 s-1]:vino3f:::78.162
+208:28:81:VIDMF:Vertical integral of divergence of mass flux [kg m-2 s-1]:vidmf:::81.162
+209:29:82:VIDKEF:Vertical integral of divergence of kinetic energy flux [W m-2]:vidkef:::82.162
+210:30:83:VIDTEF:Vertical integral of divergence of thermal energy flux [W m-2]:vidtef:::83.162
+211:31:84:VIDMOF:Vertical integral of divergence of moisture flux [kg m-2 s-1]:vidmof:::84.162
+212:32:85:VIDGF:Vertical integral of divergence of geopotential flux [W m-2]:vidgf:::85.162
+213:33:86:VIDTOTEF:Vertical integral of divergence of total energy flux [W m-2]:vidtotef:::86.162
+214:34:87:VIDO3F:Vertical integral of divergence of ozone flux [kg m-2 s-1]:vido3f:::87.162
+215:35:100:TSWR:Tendency of shortwave radiation [K]:tswr:::100.162
+216:36:101:TLWR:Tendency of longwave radiation [K]:tlwr:::101.162
+217:37:102:TCSSWF:Tendency of clear sky shortwave radiation [K]:tcsswf:::102.162
+218:38:103:TCSLWR:Tendency of clear sky longwave radiation [K]:tcslwr:::103.162
+219:39:104:UMF:Updraught mass flux [kg m-2]:umf:::104.162
+220:40:105:DMF:Downdraught mass flux [kg m-2]:dmf:::105.162
+221:41:106:UDR:Updraught detrainment rate [s m-1]:udr:::106.162
+222:42:107:DDR:Downdraught detrainment rate [s m-1]:ddr:::107.162
+223:43:108:TPF:Total precipitation flux [kg m-2]:tpf:::108.162
+224:44:109:TDCFH:Turbulent diffusion coefficient for heat [m2]:tdcfh:::109.162
+225:45:110:TT:Tendency of temperature [K]:tt:::110.162
+226:46:111:TQ:Tendency of specific humidity [1]:tq:::111.162
+227:47:112:TUC:Tendency of u component [m s-1]:tuc:::112.162
+228:48:113:TVC:Tendency of v component [m s-1]:tvc:::113.162
+229:49:114:UTENDD:U-tendency from dynamics [m s-1]:utendd:::114.162
+230:50:115:VTENDD:V-tendency from dynamics [m s-1]:vtendd:::115.162
+231:51:116:TTENDD:T-tendency from dynamics [K]:ttendd:::116.162
+232:52:117:QTENDD:q-tendency from dynamics [1]:qtendd:::117.162
+233:53:118:TTENDR:T-tendency from radiation [K]:ttendr:::118.162
+234:54:119:UTENDTS:U-tendency from turbulent diffusion + subgrid orography [m s-1]:utendts:::119.162
+235:55:120:VTENDTS:V-tendency from turbulent diffusion + subgrid orography [m s-1]:vtendts:::120.162
+236:56:121:TTENDTS:T-tendency from turbulent diffusion + subgrid orography [K]:ttendts:::121.162
+237:57:122:QTENDT:q-tendency from turbulent diffusion [1]:qtendt:::122.162
+238:58:123:UTENDS:U-tendency from subgrid orography [m s-1]:utends:::123.162
+239:59:124:VTENDS:V-tendency from subgrid orography [m s-1]:vtends:::124.162
+240:60:125:TTENDS:T-tendency from subgrid orography [K]:ttends:::125.162
+241:61:126:UTENDCDS:U-tendency from convection (deep+shallow) [m s-1]:utendcds:::126.162
+242:62:127:VTENDCDS:V-tendency from convection (deep+shallow) [m s-1]:vtendcds:::127.162
+243:63:128:TTENDCDS:T-tendency from convection (deep+shallow) [K]:ttendcds:::128.162
+244:64:129:QTENDCDS:q-tendency from convection (deep+shallow) [kg kg-1]:qtendcds:::129.162
+245:65:130:LPC:Liquid Precipitation flux from convection [kg m-2]:lpc:::130.162
+246:66:131:IPC:Ice Precipitation flux from convection [kg m-2]:ipc:::131.162
+247:67:132:TTENDCS:T-tendency from cloud scheme [K]:ttendcs:::132.162
+248:68:133:QTENDCS:q-tendency from cloud scheme [kg kg-1]:qtendcs:::133.162
+249:69:134:QLTENDCS:ql-tendency from cloud scheme [kg kg-1]:qltendcs:::134.162
+250:70:135:QITENDCS:qi-tendency from cloud scheme [kg kg-1]:qitendcs:::135.162
+251:71:136:LPCS:Liquid Precip flux from cloud scheme (stratiform) [kg m-2]:lpcs:::136.162
+252:72:137:IPCS:Ice Precip flux from cloud scheme (stratiform) [kg m-2]:ipcs:::137.162
+253:73:138:UTENDSC:U-tendency from shallow convection [m s-1]:utendsc:::138.162
+254:74:139:VTENDSC:V-tendency from shallow convection [m s-1]:vtendsc:::139.162
+255:75:140:TTENDSC:T-tendency from shallow convection [K]:ttendsc:::140.162
+256:76:141:QTENDSC:q-tendency from shallow convection [1]:qtendsc:::141.162
+257:77:206:VG:Variance of geopotential [m4 s-4]:vg:::206.162
+258:78:207:CG:Covariance of geopotential/temperature [m2 K s-2]:cg:::207.162
+259:79:208:VT:Variance of temperature [K2]:vt:::208.162
+260:80:209:CGQ:Covariance of geopotential/specific humidity [m2 s-2]:cgq:::209.162
+261:81:210:CTQ:Covariance of temperature/specific humidity [K]:ctq:::210.162
+262:82:211:VQ:Variance of specific humidity [1]:vq:::211.162
+263:83:212:CUZ:Covariance of u component/geopotential [m3 s-3]:cuz:::212.162
+264:84:213:CUT:Covariance of u component/temperature [m s-1 K]:cut:::213.162
+265:85:214:CUQ:Covariance of u component/specific humidity [m s-1]:cuq:::214.162
+266:86:215:VU:Variance of u component [m2 s-2]:vu:::215.162
+267:87:216:CVZ:Covariance of v component/geopotential [m3 s-3]:cvz:::216.162
+268:88:217:CVT:Covariance of v component/temperature [m s-1 K]:cvt:::217.162
+269:89:218:CVQ:Covariance of v component/specific humidity [m s-1]:cvq:::218.162
+270:90:219:CVU:Covariance of v component/u component [m2 s-2]:cvu:::219.162
+271:91:220:VV:Variance of v component [m2 s-2]:vv:::220.162
+272:92:221:COZ:Covariance of omega/geopotential [m2 Pa s-3]:coz:::221.162
+273:93:222:COT:Covariance of omega/temperature [Pa s-1 K]:cot:::222.162
+274:94:223:COQ:Covariance of omega/specific humidity [Pa s-1]:coq:::223.162
+275:95:224:COU:Covariance of omega/u component [m Pa s-2]:cou:::224.162
+276:96:225:COV:Covariance of omega/v component [m Pa s-2]:cov:::225.162
+277:97:226:VO:Variance of omega [Pa2 s-2]:vo:::226.162
+278:98:227:VSP:Variance of surface pressure [Pa2]:vsp:::227.162
+279:99:229:VRH:Variance of relative humidity [1]:vrh:::229.162
+280:100:230:CUO3:Covariance of u component/ozone [m s-1]:cuo3:::230.162
+281:101:231:CVO3:Covariance of v component/ozone [m s-1]:cvo3:::231.162
+282:102:232:COO3:Covariance of omega/ozone [Pa s-1]:coo3:::232.162
+283:103:233:VO3:Variance of ozone [1]:vo3:::233.162

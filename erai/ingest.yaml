@@ -1,0 +1,64 @@
+# Metadata, as per intake_esm catalogue.json
+id: erai
+title: ERA Interim (subdaily)
+description: |
+    Replica of ERA Interim reanlysis from ECMWF on gadi. This collection is a subset of ERA Interim, including only subdaily (3hr/6hr) frequencies, for monthly data see the eraimon collection. The collection is complete as ERA Interim production stopped to Aug 2019.
+
+    The files were downloaded from ECMWF in grib format and converted to netcdf using where possible the cmor variable name conventions for variable names. The DRS is also a loose adaptation of the CMIP5 DRS.
+
+    Project: ub4
+    Maintained By: CLEX
+    Contact: cws_help@nci.org.au
+    Documentation: http://climate-cms.wikis.unsw.edu.au/ERA_INTERIM
+    License: https://creativecommons.org/licenses/by/4.0/
+    References:
+        -  https://apps.ecmwf.int/datasets/data/interim-full-daily/licence/
+
+# Find paths and options to locate all of the files
+find:
+    paths:
+        - /g/data/ub4/erai/netcdf/
+    options: -not -type d -not -path */fx/* -name *.nc
+
+# Python regular expression to decompose the DRS
+#   Name a section with (?P<NAME>...)
+#   Refer to a previous name with (?P=NAME) (e.g. if the variable is in both the path and filename)
+#   Uses the re.VERBOSE flag, comments allowed
+drs: |
+    ^(?P<path>
+    /g/data/ub4/erai/netcdf
+    /(?P<frequency>[^/]+)             # /3hr
+    /(?P<realm>[^/]+)                 # /atmos
+    /(.*[^/]+)                         # /oper_fc_sfc
+    /(?P<version>[^/]+)               # /v01
+    /(?P<variable>[^/]+)              # /ta2d
+    /(?P=variable)                    # /ta2d
+    (_(?P=frequency)s)?               # _3hrs
+    _ERAI_historical                  # _ERAI_historical
+    _(?P<mode>[^/_]+)                  # _fc-sfc
+    _(?P<date_range>[^/]+)            # _20190601_20190630
+    .nc
+     )
+
+# Aggregation, as per intake_esm catalogue.json
+# Attributes will be automatically generated based on the DRS pattern,
+# excluding the asset column name
+assets:
+    column_name: path
+    format: netcdf
+aggregation_control:
+    # Name of the variable in the file
+    variable_column_name: variable
+    # Grouping keys are made of these columns, joined by '.'
+    groupby_attrs:
+        - mode
+        - realm
+        - frequency
+        - variable
+        - version
+    aggregations:
+        # Join along the existing time dimension
+        - type: join_existing
+          attribute_name: date_range
+          options:
+              dim: time
