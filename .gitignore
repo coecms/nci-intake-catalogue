@@ -1,7 +1,9 @@
 listing*
 catalogue*.csv*
+errors.xz
 *.swp
 __pycache__
+catalogue.json
 esgf/catalogue.yaml
 esgf/*/catalogue*.json
 esgf/*/errors
