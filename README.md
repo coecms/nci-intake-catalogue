@@ -62,7 +62,7 @@ The catalogue.csv.xz file is a compressed csv file that lists every file in the 
 As an example a snippet of the catalogue for the erai dataset:
 
 ```csv
-ath,frequency,realm,version,variable,mode,date_range,level,product,code,ecmwf_name,long_name,standard_name,cell_methods,parameter
+path,frequency,realm,version,variable,mode,date_range,level,product,code,ecmwf_name,long_name,standard_name,cell_methods,parameter
 /g/data/ub4/erai/netcdf/3hr/atmos/oper_fc_sfc/v01/blh/blh_3hrs_ERAI_historical_fc-sfc_19790101_19790131.nc,3hr,atmos,v01,blh,fc-sfc,19790101_19790131,surface,forecast,159,BLH,Boundary layer height [m],,,159.128
 ...
 ```
@@ -91,7 +91,7 @@ drs: |
     ...
 ```
  
-* `asset` section, here the `path` is added as an attribute column, all the others are automatically generated based on the DRS pattern. This is also where the attributes used to groupby and aggregate the data are defined.
+* `assets` section, here the `path` is added as an attribute column, all the others are automatically generated based on the DRS pattern. This is also where the attributes used to groupby and aggregate the data are defined.
 
 ```yaml
 assets:
