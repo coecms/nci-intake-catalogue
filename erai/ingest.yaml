@@ -2,7 +2,7 @@
 id: erai
 title: ERA Interim (subdaily)
 description: |
-    Replica of ERA Interim reanlysis from ECMWF on gadi. This collection is a subset of ERA Interim, including only subdaily (3hr/6hr) frequencies, for monthly data see the eraimon collection. The collection is complete as ERA Interim production stopped to Aug 2019.
+    Replica of ERA Interim reanalysis from ECMWF on gadi. This collection is a subset of ERA Interim, including only subdaily (3hr/6hr) frequencies, for monthly data see the eraimon collection. The collection is complete as ERA Interim production stopped to Aug 2019.
 
     The files were downloaded from ECMWF in grib format and converted to netcdf using where possible the cmor variable name conventions for variable names. The DRS is also a loose adaptation of the CMIP5 DRS.
 
