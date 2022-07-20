@@ -4,6 +4,7 @@
 
 The catalogue is available in intake's default catalogue list in the CLEX Conda
 environment
+Two notebooks are provided in the docs folder showing how to access the ERA5 and CIP6 datasets.  
 
 ```python
 import intake
