@@ -74,11 +74,7 @@ parameter_to_var = {
     "10si": "si10", 
     "ci": "siconc", 
     "2t": "t2m", 
-    "10u": "u10", 
-    "100u": "u100", 
-    "10v": "v10", 
-    "100v": "v100",
-    "sd": "sde",
+    "w-snow": "sde",
 }
 
 with open('catalogue.json') as f:
