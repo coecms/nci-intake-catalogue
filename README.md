@@ -14,7 +14,7 @@ print(list(intake.cat.nci))
 
 Individual datasets are catalogued using intake-esm
 
-NB following an inatke-esm update the expression above would only work with the latest intake-esm (i.e., conda environements >= 22.10).
+NB following an intake-esm update opening the catalogue as shown above, would only work with the latest intake-esm (i.e., conda environements >= 22.10).
 To open the catalogue with older versions on intake-esm access directly this catalogue file:
 
 ```python
