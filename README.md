@@ -14,6 +14,15 @@ print(list(intake.cat.nci))
 
 Individual datasets are catalogued using intake-esm
 
+NB following an inatke-esm update the expression above would only work with the latest intake-esm (i.e., conda environements >= 22.10).
+To open the catalogue with older versions on intake-esm access directly this catalogue file:
+
+```python
+import intake
+
+cat = intake.open_catalog('/g/data/hh5/public/apps/nci-intake-catalogue/catalogue.yaml')
+```
+
 ## Admin
 
 This catalogue exists on Gadi's filesystem under /g/data/hh5/public/apps/nci-intake-catalogue
