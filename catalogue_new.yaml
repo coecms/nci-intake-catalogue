@@ -1,0 +1,84 @@
+metadata:
+    version: 1
+sources:
+    era5:
+        description: |
+            ECMWF ERA5 Reanalysis
+
+            Requires access to /g/data/rt52
+
+            Files managed by NCI, contact help@nci.org.au
+            
+            https://confluence.ecmwf.int/display/CKB/ERA5%3A+data+documentation
+            https://opus.nci.org.au/display/ERA5/ERA5+Community+Home
+        driver: intake_esm.esm_datastore
+        args:
+            obj: '{{CATALOG_DIR}}/era5/catalogue.json'
+    era5_land:
+        description: |
+            ECMWF ERA5-Land Reanalysis
+
+            Requires access to /g/data/zz93
+
+            Files managed by NCI, contact help@nci.org.au
+
+            https://confluence.ecmwf.int/display/CKB/ERA5-Land%3A+data+documentation
+            https://opus.nci.org.au/display/ERA5/ERA5+Community+Home
+        driver: intake_esm.esm_datastore
+        args:
+            obj: '{{CATALOG_DIR}}/era5-land/catalogue.json'
+    ecmwf:
+        description: Small datasets from ECMWF
+        driver: intake.catalog.local.YAMLFileCatalog
+        args:
+            path: '{{CATALOG_DIR}}/ecmwf/catalogue.yaml'
+    esgf:
+        description: |
+            Data sources from the ESGF published or replicated at NCI
+        driver: intake.catalog.local.YAMLFileCatalog
+        args:
+            path: '{{CATALOG_DIR}}/esgf/catalogue_new.yaml'
+    cosima:
+        description: |
+            Collection of model output data for the Consortium for Ocean-Sea Ice Modelling in Australia (COSIMA).
+
+            COSIMA is comprised of a number of university nodes (ANU, UNSW, UTas, UAdelaide) and the major publicly-funded research agencies (Bureau of Meteorology, Australian Antarctic Division and the CSIRO). We are strongly supported by the National Computational Infrastructure and the Australian Research Council. COSIMA's goal is to develop ocean and sea ice model configurations.COSIMA's supported model configurations are detailed below.
+
+            ACCESS-OM2
+
+            ACCESS is the Australian community climate model. The ocean model components of ACCESS include MOM5.1, with the CICE5 sea ice model and OASIS-MCT coupling. ACCESS-OM2 is designed to be consistent with the full coupled version of ACCESS (released as ACCESS-CM2). COSIMA supports ACCESS-OM2 at three resolutions: the standard 1° resolution, and the higher 0.25° and 0.1° resolutions. Each resolution is defined at the Equator, with a tripolar grid in the north and Mercator projection down to 65°S. The entire ACCESS-OM2 suite is available from our COSIMA GitHub repository. Full details on the model development and evaluation can be found in Kiss et al. (2020). Details of each model configuration are listed below.
+
+            ACCESS-OM2
+            ACCESS-OM2 is the moniker used to describe the suite of ACCESS Ocean Models, as well as to specifically refer to the default 1° model version. The model lateral resolution is nominally 1° over much of the globe, with a tripolar grid in the north and Mercator projection down to 65°S. It has 50 vertical levels. The model is configured to run with JRA55-do forcing datasets.
+
+            ACCESS-OM2-025
+            ACCESS-OM2-025 is COSIMA’s 1/4° ocean-sea ice model. It uses 0.25° lateral resolution at the Equator, tripolar in the north and Mercator projection down to 65°S, with 50 vertical levels. The model is forced with the JRA55-do forcing dataset.
+
+            ACCESS-OM2-01
+            ACCESS-OM2-01 is COSIMA's flagship high-resolution ocean-sea ice model. It uses 0.1° lateral resolution at the Equator, tripolar in the north and Mercator projection down to 65°S, with 75 vertical levels. The model is forced with the JRA55-do forcing dataset.
+
+            Project: cj50
+            Maintained By: NCI
+            Contact: help@nci.org.au
+            References:
+                - http://dx.doi.org/10.4225/41/5a2dc8543105a
+        driver: intake_esm.esm_datastore
+        args:
+            obj: '{{CATALOG_DIR}}/cosima/catalogue.json'
+
+    erai:
+        description: |
+                Replica of ERA Interim reanlysis from ECMWF on gadi. This collection is a subset of ERA Interim, including only subdaily (3hr/6hr) frequencies, for monthly data see the eraimon collection. The collection is complete as ERA Interim production stopped to Aug 2019.
+
+                The files were downloaded from ECMWF in grib format and converted to netcdf using where possible the cmor variable name conventions for variable names. The DRS is also a loose adaptation of the CMIP5 DRS.
+
+        Project: ub4
+        Maintained By: CLEX
+        Contact: cws_help@nci.org.au
+        Documentation: http://climate-cms.wikis.unsw.edu.au/ERA_INTERIM
+        License: https://creativecommons.org/licenses/by/4.0/
+        References:
+                -  https://apps.ecmwf.int/datasets/data/interim-full-daily/licence/
+        driver: intake_esm.esm_datastore
+        args:
+            obj: '{{CATALOG_DIR}}/erai/catalogue.json'
